@@ -7,6 +7,11 @@ public abstract class Money {
 	public abstract int amount();
 	
 	public abstract boolean equals(Money money);
+	
+	public Money(int amount, String currency){
+		this.amount = amount;
+		this.currency = currency;
+	}
 
 	public static Money dollar(int amount) {
 		return new Dollar(amount,"USD");

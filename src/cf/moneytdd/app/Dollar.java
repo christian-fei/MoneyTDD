@@ -3,13 +3,11 @@ package cf.moneytdd.app;
 public class Dollar extends Money {
 	
 	public Dollar(int amount){
-		this.amount = amount;
-		currency = "USD";
+		super(amount, "USD");
 	}
 
 	public Dollar(int amount, String currency) {
-		this.amount = amount;
-		this.currency = currency;
+		super(amount, currency);
 	}
 
 	public int amount() {
@@ -17,10 +15,10 @@ public class Dollar extends Money {
 	}
 	
 	public Money times(int multiplier){
-		return new Dollar(amount*multiplier);
+		return new Dollar(amount*multiplier,"USD");
 	}
 	
 	public boolean equals(Money money){
-		return money.amount() == amount && getClass().equals(money.getClass());
+		return money.amount() == amount && currency().equals(money.currency());
 	}
 }

@@ -3,13 +3,11 @@ package cf.moneytdd.app;
 public class Franc extends Money {
 	
 	public Franc(int amount){
-		this.amount = amount;
-		currency = "CHF";
+		super(amount,"CHF");
 	}
 
 	public Franc(int amount, String currency) {
-		this.amount = amount;
-		this.currency = currency;
+		super(amount,currency);
 	}
 
 	public int amount() {
@@ -21,7 +19,7 @@ public class Franc extends Money {
 	}
 	
 	public boolean equals(Money money){
-		return money.amount() == amount && getClass().equals(money.getClass());
+		return money.amount() == amount && currency().equals(money.currency());
 	}
 
 }
