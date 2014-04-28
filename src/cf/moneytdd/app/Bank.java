@@ -4,7 +4,8 @@ package cf.moneytdd.app;
 public class Bank {
 
 	public Money reduce(Expression source, String toCurrency) {
-		return Money.dollar(10);
+		Sum sum = (Sum) source;
+		return sum.reduce(toCurrency);
 	}
 
 }

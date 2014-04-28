@@ -4,9 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import cf.moneytdd.app.Bank;
-import cf.moneytdd.app.Expression;
-import cf.moneytdd.app.Money;
+import cf.moneytdd.app.*;
 
 public class MoneyTest {
 	
@@ -24,7 +22,7 @@ public class MoneyTest {
 		assertEquals(sum.amount(), 6);
 		*/
 		Money five = Money.dollar(5);
-		Expression sum = five.plus(five);
+		Sum sum = new Sum(five, five);
 		Bank bank = new Bank();
 		Money reduced = bank.reduce(sum, "USD");
 		assertTrue(Money.dollar(10).equals(reduced));
