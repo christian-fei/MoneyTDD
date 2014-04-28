@@ -1,12 +1,16 @@
 package cf.moneytdd.app;
 
-public abstract class Money {
+public class Money {
 	protected int amount;
 	protected String currency;
 	
-	public abstract int amount();
+	public int amount(){
+		return amount;
+	}
 	
-	public abstract boolean equals(Money money);
+	public boolean equals(Money money){
+		return money.amount() == amount && currency().equals(money.currency());
+	}
 	
 	public Money(int amount, String currency){
 		this.amount = amount;
