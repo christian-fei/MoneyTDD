@@ -17,10 +17,6 @@ public class MoneyTest {
 	
 	@Test
 	public void testSimpleAddition(){
-		/*
-		Money sum = Money.dollar(5).plus(Money.dollar(1));
-		assertEquals(sum.amount(), 6);
-		*/
 		Money five = Money.dollar(5);
 		Sum sum = new Sum(five, five);
 		Bank bank = new Bank();
